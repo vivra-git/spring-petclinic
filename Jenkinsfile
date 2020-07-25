@@ -23,8 +23,9 @@ pipeline{
         }
         stage('Package'){
             steps{
-                sh 'mvn package'
-                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                // sh 'mvn package'
+                //archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                sh 'mvn clean compile'
                 }
         }
         stage('Reports'){
